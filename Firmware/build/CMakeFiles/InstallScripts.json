@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/badsheep1/Projects/crispy-journey/Firmware/build/cmake_install.cmake",
+		"/Users/badsheep1/Projects/crispy-journey/Firmware/build/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
