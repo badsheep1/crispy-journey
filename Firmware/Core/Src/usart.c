@@ -9,5 +9,8 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   GPIOA->MODER |=
       (0b1010 << 4); // Sets both PA2 and PA3 to Alternative Function Mode.
 
+  GPIOA->AFR[0] &= ~(0xFF << 8);
+  GPIOA->AFR[0] |= (0x77 << 8);
+
   return USART_SUCCESS;
 }
