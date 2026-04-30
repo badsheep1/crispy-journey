@@ -22,24 +22,34 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   USART2->CR1 |= (1U << 7); // TXE Interrupt enabled
 
   uint8_t clkStatus = ((RCC->CFGR & (3U << 2)) >> 2);
-  uint32_t sysClk = 0;
+  uint32_t fClk = 0;
   if (clkStatus == 0) {
-    sysClk = HSI_FREQ;
+    fClk = HSI_FREQ;
   } else if (clkStatus == 1) {
-    sysClk = HSE_FREQ;
+    fClk = HSE_FREQ;
   } else if (clkStatus == 2) {
     if ((RCC->PLLCFGR & (1U << 22)) >> 22) {
-      sysClk = HSE_FREQ;
+      fClk = HSE_FREQ;
     } else {
-      sysClk = HSI_FREQ;
+      fClk = HSI_FREQ;
     }
     uint32_t PLLN = (RCC->PLLCFGR & (0x1FF << 6)) >> 6;
     uint32_t PLLM = (RCC->PLLCFGR & 0x3F);
     uint32_t PLLP = (((RCC->PLLCFGR & (3U << 16)) >> 16) * 2) + 2;
 
-    sysClk *= PLLN;
-    sysClk /= (PLLM * PLLP);
+    fClk *= PLLN;
+    fClk /= (PLLM * PLLP);
   }
+  uint32_t prescalar = 0;
+  if ((RCC->CFGR & (1U << 12)) >> 12) {
+    uint32_t PPRE = (RCC->CFGR & (7U << 10)) >> 10;
+    PPRE = ~PPRE;
+    PPRE &= 7U;
+    prescalar = 16 / (1U << PPRE);
+  } else {
+    prescalar = 1;
+  }
+  fClk /= prescalar;
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
