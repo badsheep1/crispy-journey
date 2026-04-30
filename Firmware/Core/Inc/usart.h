@@ -4,6 +4,9 @@
 #include "stm32f4xx.h"
 #include <stdint.h>
 
+#define HSI_FREQ 16000000U
+#define HSE_FREQ 8000000U
+
 typedef enum { USART_SUCCESS, USART_FAILURE } USART_STATUS;
 
 // Function to Initialize USART2 Module

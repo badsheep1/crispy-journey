@@ -24,10 +24,21 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   uint8_t clkStatus = ((RCC->CFGR & (3U << 2)) >> 2);
   uint32_t sysClk = 0;
   if (clkStatus == 0) {
-    sysClk = 16000000U;
+    sysClk = HSI_FREQ;
   } else if (clkStatus == 1) {
-    sysClk = 8000000U;
+    sysClk = HSE_FREQ;
   } else if (clkStatus == 2) {
+    if ((RCC->PLLCFGR & (1U << 22)) >> 22) {
+      sysClk = HSE_FREQ;
+    } else {
+      sysClk = HSI_FREQ;
+    }
+    uint32_t PLLN = (RCC->PLLCFGR & (0x1FF << 6)) >> 6;
+    uint32_t PLLM = (RCC->PLLCFGR & 0x3F);
+    uint32_t PLLP = (RCC->PLLCFGR & (3U << 16)) >> 16;
+
+    sysClk *= PLLN;
+    sysClk /= (PLLM * PLLP);
   }
 
   USART2->CR1 |= (1U << 13); // USART enabled
