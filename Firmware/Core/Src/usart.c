@@ -64,9 +64,9 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   uint32_t USARTDIV =
       (16 * fClk) / divider; // USARTDIV is scaled by 16 to avoid floats
 
-  USART2->BRR &= ~(0xFFFF);            // Clearing Register
-  USART2->BRR |= (USARTDIV % 16) << 4; // Calculating and setting the Manissa
-  USART2->BRR |= USARTDIV >> 4;
+  USART2->BRR &= ~(0xFFFF);             // Clearing Register
+  USART2->BRR |= (USARTDIV % 16) & 0xF; // Setting the Fraction
+  USART2->BRR |= USARTDIV & 0xFFF0;     // Setting the Mantissa
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
