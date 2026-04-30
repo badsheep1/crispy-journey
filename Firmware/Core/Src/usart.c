@@ -35,7 +35,7 @@ USART_STATUS USART_Init(uint32_t baudrate) {
     }
     uint32_t PLLN = (RCC->PLLCFGR & (0x1FF << 6)) >> 6;
     uint32_t PLLM = (RCC->PLLCFGR & 0x3F);
-    uint32_t PLLP = (RCC->PLLCFGR & (3U << 16)) >> 16;
+    uint32_t PLLP = (((RCC->PLLCFGR & (3U << 16)) >> 16) * 2) + 2;
 
     sysClk *= PLLN;
     sysClk /= (PLLM * PLLP);
