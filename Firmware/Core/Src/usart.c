@@ -21,8 +21,10 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   USART2->CR1 |= (1U << 6); // TC interrupt enabled
   USART2->CR1 |= (1U << 7); // TXE Interrupt enabled
 
-  uint8_t clkStatus = ((RCC->CFGR & (3U << 2)) >> 2);
+  uint8_t clkStatus = ((RCC->CFGR & (3U << 2)) >>
+                       2); // Status for which CLK is used as APB input
   uint32_t fClk = 0;
+
   if (clkStatus == 0) {
     fClk = HSI_FREQ;
   } else if (clkStatus == 1) {
@@ -40,16 +42,31 @@ USART_STATUS USART_Init(uint32_t baudrate) {
     fClk *= PLLN;
     fClk /= (PLLM * PLLP);
   }
+
   uint32_t prescalar = 0;
   if ((RCC->CFGR & (1U << 12)) >> 12) {
     uint32_t PPRE = (RCC->CFGR & (7U << 10)) >> 10;
     PPRE = ~PPRE;
     PPRE &= 7U;
     prescalar = 16 / (1U << PPRE);
-  } else {
+  } else { // Left most bit being 0, doesn't scale the clk input.
     prescalar = 1;
   }
   fClk /= prescalar;
+
+  uint32_t divider = 0;
+  if (USART2->CR1 & (1U << 15)) {
+    divider = 8 * baudrate;
+  } else {
+    divider = 16 * baudrate;
+  }
+
+  uint32_t USARTDIV =
+      (16 * fClk) / divider; // USARTDIV is scaled by 16 to avoid floats
+
+  USART2->BRR &= ~(0xFFFF);            // Clearing Register
+  USART2->BRR |= (USARTDIV % 16) << 4; // Calculating and setting the Manissa
+  USART2->BRR |= USARTDIV >> 4;
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
