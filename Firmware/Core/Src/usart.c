@@ -3,7 +3,7 @@
 USART_STATUS USART_Init(uint32_t baudrate) {
   /* Configuring Peripheral Clocks */
   RCC->AHB1ENR |= (1U << 0);  // Enables GPIOA AHB1 peripheral clock.
-  RCC->AHB1ENR |= (1U << 17); // Enables USART2 Clock
+  RCC->APB1ENR |= (1U << 17); // Enables USART2 Clock
 
   /* Configuring GPIO Pins for USART */
   GPIOA->MODER &= ~(0b1111 << 4); // Clears the PA2 and PA3 bits
@@ -21,13 +21,14 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   USART2->CR1 |= (1U << 6); // TC interrupt enabled
   USART2->CR1 |= (1U << 7); // TXE Interrupt enabled
 
-  uint32_t fclk = HAL_RCC_GetPCLK1Freq();
-  uint32_t usartDIV = fclk / baudrate;
-
-  uint32_t fraction = usartDIV % 16;
-  uint32_t mantissa = (usartDIV >> 4);
-
-  USART2->BRR = (mantissa << 4) & 0xFFF0 | (fraction & 0x000F);
+  uint8_t clkStatus = ((RCC->CFGR & (3U << 2)) >> 2);
+  uint32_t sysClk = 0;
+  if (clkStatus == 0) {
+    sysClk = 16000000U;
+  } else if (clkStatus == 1) {
+    sysClk = 8000000U;
+  } else if (clkStatus == 2) {
+  }
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
