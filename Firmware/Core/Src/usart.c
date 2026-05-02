@@ -54,19 +54,20 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   }
   fClk /= prescalar;
 
-  uint32_t divider = 0;
+  uint32_t USARTDIV =
+      ((8 * (2 - ((USART2->CR1 >> 15) & 1U))) * fClk) / baudrate;
+
+  USART2->BRR &= ~(0xFFFF); // Clearing the BRR Register
+
   if (USART2->CR1 & (1U << 15)) {
-    divider = 8 * baudrate;
-  } else {
-    divider = 16 * baudrate;
+    if (USARTDIV & (1U << 3)) {
+      USARTDIV += (1U << 3); // If the fraction rounds up and overflows into bit
+                             // 3, we perform a addition operation to carry it
+                             // over to the Mantissa.
+    }
   }
 
-  uint32_t USARTDIV =
-      (16 * fClk) / divider; // USARTDIV is scaled by 16 to avoid floats
-
-  USART2->BRR &= ~(0xFFFF);             // Clearing Register
-  USART2->BRR |= (USARTDIV % 16) & 0xF; // Setting the Fraction
-  USART2->BRR |= USARTDIV & 0xFFF0;     // Setting the Mantissa
+  USART2->BRR |= USARTDIV;
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
