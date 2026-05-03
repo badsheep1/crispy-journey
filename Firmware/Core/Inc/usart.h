@@ -9,6 +9,8 @@
 
 #define BUFFER_SIZE 256
 
+typedef struct circularBuffer Circle;
+
 typedef enum { USART_SUCCESS, USART_FAILURE } USART_STATUS;
 
 // Function to Initialize USART2 Module
@@ -17,6 +19,10 @@ USART_STATUS USART_Init(uint32_t baudrate);
 // USART_STATUS USART_Transmit()
 
 // USART_STATUS USART_Receive()
+
+// Circular Buffer Manipulations
+
+void enqueue(Circle *buffer);
 
 // Helper Function
 

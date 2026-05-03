@@ -1,10 +1,10 @@
 #include "usart.h"
 
-typedef struct circularBuffer {
+struct circularBuffer {
   uint8_t data[BUFFER_SIZE];
   uint8_t head;
   uint8_t tail;
-} Circle;
+};
 
 static Circle RX_Buffer;
 static Circle TX_Buffer;
@@ -91,6 +91,10 @@ USART_STATUS USART_Init(uint32_t baudrate) {
 
   return USART_SUCCESS;
 }
+
+// Circular Buffer Manipulations:
+
+void enqueue(Circle *buffer) { ; }
 
 // Interrupt Handler
 void USART2_IRQHandler(void) { ; }
