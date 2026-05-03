@@ -116,6 +116,23 @@ USART_STATUS dequeue(Circle *buffer, uint8_t *byte) {
   return USART_FAILURE;
 }
 
+USART_STATUS USART_Transmit(uint8_t byte) {
+  if (enqueue(&TX_Buffer, byte)) {
+    USART2->CR1 |=
+        (1U << 7); // Enabling TXIE after enqueuing ensuring non-empty buffer
+    return USART_SUCCESS;
+  }
+
+  return USART_FAILURE;
+}
+
+USART_STATUS USART_Receive(uint8_t *byte) {
+  if (dequeue(&RX_Buffer, byte)) {
+    return USART_SUCCESS;
+  }
+  return USART_FAILURE;
+}
+
 // Interrupt Handler
 void USART2_IRQHandler(void) {
 

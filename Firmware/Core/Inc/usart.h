@@ -16,9 +16,9 @@ typedef enum { USART_FAILURE = 0, USART_SUCCESS } USART_STATUS;
 // Function to Initialize USART2 Module
 USART_STATUS USART_Init(uint32_t baudrate);
 
-// USART_STATUS USART_Transmit()
+USART_STATUS USART_Transmit(uint8_t byte);
 
-// USART_STATUS USART_Receive()
+USART_STATUS USART_Receive(uint8_t *byte);
 
 // Circular Buffer Manipulations
 
