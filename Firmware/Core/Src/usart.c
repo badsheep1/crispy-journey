@@ -95,9 +95,10 @@ USART_STATUS USART_Init(uint32_t baudrate) {
 // Circular Buffer Manipulations:
 
 void enqueue(Circle *buffer, uint8_t byte) {
-  uint8_t nextPos = (buffer->tail + 1) % BUFFER_SIZE;
+  uint8_t nextPos =
+      (buffer->tail + 1) % BUFFER_SIZE; // Modulo by 256, wraps from 256 to 0
 
-  if (nextPos != buffer->head) {
+  if (nextPos != buffer->head) { // Checks if the buffer is full
     buffer->data[buffer->tail] = byte;
     buffer->tail = nextPos;
   }
