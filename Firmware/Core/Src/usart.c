@@ -117,4 +117,21 @@ USART_STATUS dequeue(Circle *buffer, uint8_t *byte) {
 }
 
 // Interrupt Handler
-void USART2_IRQHandler(void) { ; }
+void USART2_IRQHandler(void) {
+
+  // RXNE Bit indicating Read data register is not empty
+  if (USART2->SR & (1U << 5)) {
+    uint8_t RX_data = USART2->DR;
+    enqueue(&RX_Buffer, RX_data);
+  }
+
+  // TXE Bit indicating Transmit data register is empty
+  if (USART2->SR & (1U << 7)) {
+    uint8_t TX_data = 0;
+    if (dequeue(&TX_Buffer, &TX_data)) {
+      USART2->DR = TX_data;
+    } else {
+      USART2->CR1 &= ~(1U << 7); // Disabling TXIE
+    }
+  }
+}

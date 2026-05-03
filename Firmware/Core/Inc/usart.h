@@ -11,7 +11,7 @@
 
 typedef struct circularBuffer Circle;
 
-typedef enum { USART_SUCCESS, USART_FAILURE } USART_STATUS;
+typedef enum { USART_FAILURE = 0, USART_SUCCESS } USART_STATUS;
 
 // Function to Initialize USART2 Module
 USART_STATUS USART_Init(uint32_t baudrate);
