@@ -127,10 +127,11 @@ USART_STATUS USART_Transmit(uint8_t byte) {
 }
 
 USART_STATUS USART_Receive(uint8_t *byte) {
-  if (dequeue(&RX_Buffer, byte)) {
-    return USART_SUCCESS;
-  }
-  return USART_FAILURE;
+  __disable_irq(); // Disables all Interrupts to prevent a Race Condition on RX
+                   // Buffer
+  USART_STATUS returnStatus = dequeue(&RX_Buffer, byte);
+  __enable_irq();
+  return returnStatus;
 }
 
 // Interrupt Handler
