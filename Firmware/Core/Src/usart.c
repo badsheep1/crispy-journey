@@ -1,6 +1,20 @@
 #include "usart.h"
 
+typedef struct circularBuffer {
+  uint8_t data[BUFFER_SIZE];
+  uint8_t head;
+  uint8_t tail;
+} Circle;
+
+static Circle RX_Buffer;
+static Circle TX_Buffer;
+
 USART_STATUS USART_Init(uint32_t baudrate) {
+
+  if (baudrate == 0) { // 0 Baudrate is invalid
+    return USART_FAILURE;
+  }
+
   /* Configuring Peripheral Clocks */
   RCC->AHB1ENR |= (1U << 0);  // Enables GPIOA AHB1 peripheral clock.
   RCC->APB1ENR |= (1U << 17); // Enables USART2 Clock
@@ -71,5 +85,12 @@ USART_STATUS USART_Init(uint32_t baudrate) {
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
+  // Initializing Circular Buffer Architecture
+  RX_Buffer.head = RX_Buffer.tail = 0;
+  TX_Buffer.head = TX_Buffer.tail = 0;
+
   return USART_SUCCESS;
 }
+
+// Interrupt Handler
+void USART2_IRQHandler(void) { ; }

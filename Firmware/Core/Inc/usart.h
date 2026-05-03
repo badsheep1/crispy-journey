@@ -7,6 +7,8 @@
 #define HSI_FREQ 16000000U
 #define HSE_FREQ 8000000U
 
+#define BUFFER_SIZE 256
+
 typedef enum { USART_SUCCESS, USART_FAILURE } USART_STATUS;
 
 // Function to Initialize USART2 Module
@@ -17,7 +19,5 @@ USART_STATUS USART_Init(uint32_t baudrate);
 // USART_STATUS USART_Receive()
 
 // Helper Function
-
-USART_STATUS setBaudrate(uint32_t baudrate);
 
 #endif
