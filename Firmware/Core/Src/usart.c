@@ -94,7 +94,14 @@ USART_STATUS USART_Init(uint32_t baudrate) {
 
 // Circular Buffer Manipulations:
 
-void enqueue(Circle *buffer) { ; }
+void enqueue(Circle *buffer, uint8_t byte) {
+  uint8_t nextPos = (buffer->tail + 1) % BUFFER_SIZE;
+
+  if (nextPos != buffer->head) {
+    buffer->data[buffer->tail] = byte;
+    buffer->tail = nextPos;
+  }
+}
 
 // Interrupt Handler
 void USART2_IRQHandler(void) { ; }

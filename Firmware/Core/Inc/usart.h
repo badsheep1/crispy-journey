@@ -22,7 +22,7 @@ USART_STATUS USART_Init(uint32_t baudrate);
 
 // Circular Buffer Manipulations
 
-void enqueue(Circle *buffer);
+void enqueue(Circle *buffer, uint8_t byte);
 
 // Helper Function
 
