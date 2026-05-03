@@ -157,6 +157,14 @@ void USART2_IRQHandler(void) {
   }
 }
 
-void RX_RegisterCallback(void (*callback)(void)) { RX_Callback = callback; }
+void RX_RegisterCallback(void (*callback)(void)) {
+  if (callback != NULL) {
+    RX_Callback = callback;
+  }
+}
 
-void TX_RegisterCallback(void (*callback)(void)) { TX_Callback = callback; }
+void TX_RegisterCallback(void (*callback)(void)) {
+  if (callback != NULL) {
+    TX_Callback = callback;
+  }
+}
