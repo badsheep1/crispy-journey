@@ -9,6 +9,9 @@ struct circularBuffer {
 static Circle RX_Buffer;
 static Circle TX_Buffer;
 
+static void (*RX_Callback)(void);
+static void (*TX_Callback)(void);
+
 USART_STATUS USART_Init(uint32_t baudrate) {
 
   if (baudrate == 0) { // 0 Baudrate is invalid
@@ -153,3 +156,7 @@ void USART2_IRQHandler(void) {
     }
   }
 }
+
+void RX_RegisterCallback(void (*callback)(void)) { RX_Callback = callback; }
+
+void TX_RegisterCallback(void (*callback)(void)) { TX_Callback = callback; }

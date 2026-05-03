@@ -26,6 +26,11 @@ USART_STATUS enqueue(Circle *buffer, uint8_t byte);
 
 USART_STATUS dequeue(Circle *buffer, uint8_t *byte);
 
+// Other Function
+void RX_RegisterCallback(void (*callback)(void));
+
+void TX_RegisterCallback(void (*callback)(void));
+
 // Helper Function
 
 #endif
