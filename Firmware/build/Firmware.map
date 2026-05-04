@@ -998,17 +998,17 @@ LOAD linker stubs
  .debug_aranges
                 0x00000128       0x20 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
 
-.debug_line     0x00000000     0x2994
+.debug_line     0x00000000     0x2992
  .debug_line    0x00000000      0x2c6 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
  .debug_line    0x000002c6      0x916 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
  .debug_line    0x00000bdc      0x628 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
  .debug_line    0x00001204      0x696 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .debug_line    0x0000189a      0x468 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_line    0x00001d02      0x3ff CMakeFiles/Firmware.dir/Core/Src/main.c.obj
- .debug_line    0x00002101      0x12e CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_line    0x0000222f      0x257 CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_line    0x00002486       0x7a CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
- .debug_line    0x00002500      0x494 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
+ .debug_line    0x00001d02      0x3fd CMakeFiles/Firmware.dir/Core/Src/main.c.obj
+ .debug_line    0x000020ff      0x12e CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_line    0x0000222d      0x257 CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_line    0x00002484       0x7a CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
+ .debug_line    0x000024fe      0x494 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
 
 .debug_str      0x00000000     0x1871
  .debug_str     0x00000000     0x1871 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj

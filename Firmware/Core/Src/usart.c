@@ -30,15 +30,9 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   GPIOA->AFR[0] &= ~(0xFF << 8);
   GPIOA->AFR[0] |= (0x77 << 8);
 
-  /* Configuring USART Register */
-  USART2->CR1 |= (1U << 2); // Receiver enabled
-  USART2->CR1 |= (1U << 3); // Transmitter enabled
-
-  USART2->CR1 |= (1U << 5); // RX interrupt enabled
-  USART2->CR1 |= (1U << 6); // TC interrupt enabled
-  USART2->CR1 |= (1U << 7); // TXE Interrupt enabled
-
-  NVIC->ISER[1] |= (1U << 6); // Enables USART2 Global Interrupt
+  // Initializing Circular Buffer Architecture
+  RX_Buffer.head = RX_Buffer.tail = 0;
+  TX_Buffer.head = TX_Buffer.tail = 0;
 
   uint8_t clkStatus = ((RCC->CFGR & (3U << 2)) >>
                        2); // Status for which CLK is used as APB input
@@ -88,11 +82,17 @@ USART_STATUS USART_Init(uint32_t baudrate) {
 
   USART2->BRR |= USARTDIV;
 
+  /* Configuring USART Register */
+  USART2->CR1 |= (1U << 2); // Receiver enabled
+  USART2->CR1 |= (1U << 3); // Transmitter enabled
+
+  USART2->CR1 |= (1U << 5); // RX interrupt enabled
+  USART2->CR1 |= (1U << 6); // TC interrupt enabled
+  USART2->CR1 |= (1U << 7); // TXE Interrupt enabled
+
   USART2->CR1 |= (1U << 13); // USART enabled
 
-  // Initializing Circular Buffer Architecture
-  RX_Buffer.head = RX_Buffer.tail = 0;
-  TX_Buffer.head = TX_Buffer.tail = 0;
+  NVIC->ISER[1] |= (1U << 6); // Enables USART2 Global Interrupt
 
   return USART_SUCCESS;
 }
