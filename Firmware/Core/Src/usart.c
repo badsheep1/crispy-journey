@@ -38,6 +38,8 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   USART2->CR1 |= (1U << 6); // TC interrupt enabled
   USART2->CR1 |= (1U << 7); // TXE Interrupt enabled
 
+  NVIC->ISER[1] |= (1U << 6); // Enables USART2 Global Interrupt
+
   uint8_t clkStatus = ((RCC->CFGR & (3U << 2)) >>
                        2); // Status for which CLK is used as APB input
   uint32_t fClk = 0;
@@ -144,6 +146,9 @@ void USART2_IRQHandler(void) {
   if (USART2->SR & (1U << 5)) {
     uint8_t RX_data = USART2->DR;
     enqueue(&RX_Buffer, RX_data);
+    if (RX_Callback != NULL) {
+      RX_Callback();
+    }
   }
 
   // TXE Bit indicating Transmit data register is empty
