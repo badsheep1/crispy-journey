@@ -55,3 +55,12 @@
 128	161	1777832428272631439	cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj	a34d63d6d2424b4
 126	164	1777832428269961852	cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj	9e6446e16c5e5f8f
 164	187	1777832428308003241	Firmware	2d5133598cdf4e0e
+3	104	1777833684179729277	CMakeFiles/Firmware.dir/Core/Src/main.c.obj	2ff50842a4f676f8
+104	131	1777833684281259551	Firmware	2d5133598cdf4e0e
+2	104	1777834025578150479	CMakeFiles/Firmware.dir/Core/Src/main.c.obj	2ff50842a4f676f8
+3	104	1777834025578536147	CMakeFiles/Firmware.dir/Core/Src/usart.c.obj	bb9dfac2beb1d102
+104	131	1777834025679795671	Firmware	2d5133598cdf4e0e
+5	190	1777859230379450262	CMakeFiles/Firmware.dir/Core/Src/usart.c.obj	bb9dfac2beb1d102
+190	279	1777859230565216355	Firmware	2d5133598cdf4e0e
+2	105	1777859312135148876	CMakeFiles/Firmware.dir/Core/Src/usart.c.obj	bb9dfac2beb1d102
+105	130	1777859312237856808	Firmware	2d5133598cdf4e0e
