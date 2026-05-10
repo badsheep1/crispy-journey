@@ -527,7 +527,7 @@ LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x08000000                g_pfnVectors
                 0x08000198                        . = ALIGN (0x4)
 
-.text           0x08000198     0x287c
+.text           0x08000198     0x2878
                 0x08000198                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000198      0x10c cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
@@ -622,179 +622,179 @@ LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *fill*         0x0800212a        0x2 
  .text          0x0800212c       0x50 CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_hal_msp.c.obj
                 0x0800212c                HAL_MspInit
- .text          0x0800217c      0x3f4 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
+ .text          0x0800217c      0x3f0 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
                 0x0800217c                USART_Init
-                0x0800239c                enqueue
-                0x080023ee                dequeue
-                0x08002442                USART_Transmit
-                0x08002480                USART_Receive
-                0x080024ac                USART2_IRQHandler
-                0x08002528                RX_RegisterCallback
-                0x0800254c                TX_RegisterCallback
- .text          0x08002570       0x30 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
-                0x08002570                __aeabi_uldivmod
- .text          0x080025a0        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
-                0x080025a0                __aeabi_ldiv0
-                0x080025a0                __aeabi_idiv0
+                0x0800238c                enqueue
+                0x080023de                dequeue
+                0x08002432                USART_Transmit
+                0x0800247c                USART_Receive
+                0x080024a8                USART2_IRQHandler
+                0x08002524                RX_RegisterCallback
+                0x08002548                TX_RegisterCallback
+ .text          0x0800256c       0x30 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_aeabi_uldivmod.o)
+                0x0800256c                __aeabi_uldivmod
+ .text          0x0800259c        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_dvmd_tls.o)
+                0x0800259c                __aeabi_ldiv0
+                0x0800259c                __aeabi_idiv0
  *(.text*)
  .text.deregister_tm_clones
-                0x080025a4       0x1c /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080025a0       0x1c /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .text.register_tm_clones
-                0x080025c0       0x24 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080025bc       0x24 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .text.__do_global_dtors_aux
-                0x080025e4       0x28 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080025e0       0x28 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .text.frame_dummy
-                0x0800260c       0x24 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08002608       0x24 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .text.Reset_Handler
-                0x08002630       0x50 CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
-                0x08002630                Reset_Handler
+                0x0800262c       0x50 CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
+                0x0800262c                Reset_Handler
  .text.Default_Handler
-                0x08002680        0x2 CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
-                0x08002680                DMA1_Stream3_IRQHandler
-                0x08002680                EXTI2_IRQHandler
-                0x08002680                SPI4_IRQHandler
-                0x08002680                TIM1_CC_IRQHandler
-                0x08002680                DMA2_Stream5_IRQHandler
-                0x08002680                DMA1_Stream5_IRQHandler
-                0x08002680                PVD_IRQHandler
-                0x08002680                SDIO_IRQHandler
-                0x08002680                TAMP_STAMP_IRQHandler
-                0x08002680                EXTI3_IRQHandler
-                0x08002680                TIM1_UP_TIM10_IRQHandler
-                0x08002680                I2C3_ER_IRQHandler
-                0x08002680                EXTI0_IRQHandler
-                0x08002680                I2C2_EV_IRQHandler
-                0x08002680                DMA1_Stream2_IRQHandler
-                0x08002680                FPU_IRQHandler
-                0x08002680                DMA2_Stream2_IRQHandler
-                0x08002680                SPI1_IRQHandler
-                0x08002680                TIM1_BRK_TIM9_IRQHandler
-                0x08002680                DMA2_Stream3_IRQHandler
-                0x08002680                USART6_IRQHandler
-                0x08002680                DMA2_Stream0_IRQHandler
-                0x08002680                TIM4_IRQHandler
-                0x08002680                I2C1_EV_IRQHandler
-                0x08002680                DMA1_Stream6_IRQHandler
-                0x08002680                DMA1_Stream1_IRQHandler
-                0x08002680                TIM3_IRQHandler
-                0x08002680                RCC_IRQHandler
-                0x08002680                Default_Handler
-                0x08002680                EXTI15_10_IRQHandler
-                0x08002680                ADC_IRQHandler
-                0x08002680                DMA1_Stream7_IRQHandler
-                0x08002680                SPI5_IRQHandler
-                0x08002680                TIM5_IRQHandler
-                0x08002680                DMA2_Stream7_IRQHandler
-                0x08002680                I2C3_EV_IRQHandler
-                0x08002680                EXTI9_5_IRQHandler
-                0x08002680                RTC_WKUP_IRQHandler
-                0x08002680                SPI2_IRQHandler
-                0x08002680                DMA1_Stream0_IRQHandler
-                0x08002680                EXTI4_IRQHandler
-                0x08002680                WWDG_IRQHandler
-                0x08002680                TIM2_IRQHandler
-                0x08002680                OTG_FS_WKUP_IRQHandler
-                0x08002680                TIM1_TRG_COM_TIM11_IRQHandler
-                0x08002680                EXTI1_IRQHandler
-                0x08002680                I2C2_ER_IRQHandler
-                0x08002680                DMA2_Stream1_IRQHandler
-                0x08002680                FLASH_IRQHandler
-                0x08002680                DMA2_Stream4_IRQHandler
-                0x08002680                USART1_IRQHandler
-                0x08002680                OTG_FS_IRQHandler
-                0x08002680                SPI3_IRQHandler
-                0x08002680                DMA1_Stream4_IRQHandler
-                0x08002680                I2C1_ER_IRQHandler
-                0x08002680                DMA2_Stream6_IRQHandler
-                0x08002680                RTC_Alarm_IRQHandler
- .text.memset   0x08002682       0x10 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
-                0x08002682                memset
- *fill*         0x08002692        0x2 
+                0x0800267c        0x2 CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
+                0x0800267c                DMA1_Stream3_IRQHandler
+                0x0800267c                EXTI2_IRQHandler
+                0x0800267c                SPI4_IRQHandler
+                0x0800267c                TIM1_CC_IRQHandler
+                0x0800267c                DMA2_Stream5_IRQHandler
+                0x0800267c                DMA1_Stream5_IRQHandler
+                0x0800267c                PVD_IRQHandler
+                0x0800267c                SDIO_IRQHandler
+                0x0800267c                TAMP_STAMP_IRQHandler
+                0x0800267c                EXTI3_IRQHandler
+                0x0800267c                TIM1_UP_TIM10_IRQHandler
+                0x0800267c                I2C3_ER_IRQHandler
+                0x0800267c                EXTI0_IRQHandler
+                0x0800267c                I2C2_EV_IRQHandler
+                0x0800267c                DMA1_Stream2_IRQHandler
+                0x0800267c                FPU_IRQHandler
+                0x0800267c                DMA2_Stream2_IRQHandler
+                0x0800267c                SPI1_IRQHandler
+                0x0800267c                TIM1_BRK_TIM9_IRQHandler
+                0x0800267c                DMA2_Stream3_IRQHandler
+                0x0800267c                USART6_IRQHandler
+                0x0800267c                DMA2_Stream0_IRQHandler
+                0x0800267c                TIM4_IRQHandler
+                0x0800267c                I2C1_EV_IRQHandler
+                0x0800267c                DMA1_Stream6_IRQHandler
+                0x0800267c                DMA1_Stream1_IRQHandler
+                0x0800267c                TIM3_IRQHandler
+                0x0800267c                RCC_IRQHandler
+                0x0800267c                Default_Handler
+                0x0800267c                EXTI15_10_IRQHandler
+                0x0800267c                ADC_IRQHandler
+                0x0800267c                DMA1_Stream7_IRQHandler
+                0x0800267c                SPI5_IRQHandler
+                0x0800267c                TIM5_IRQHandler
+                0x0800267c                DMA2_Stream7_IRQHandler
+                0x0800267c                I2C3_EV_IRQHandler
+                0x0800267c                EXTI9_5_IRQHandler
+                0x0800267c                RTC_WKUP_IRQHandler
+                0x0800267c                SPI2_IRQHandler
+                0x0800267c                DMA1_Stream0_IRQHandler
+                0x0800267c                EXTI4_IRQHandler
+                0x0800267c                WWDG_IRQHandler
+                0x0800267c                TIM2_IRQHandler
+                0x0800267c                OTG_FS_WKUP_IRQHandler
+                0x0800267c                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0800267c                EXTI1_IRQHandler
+                0x0800267c                I2C2_ER_IRQHandler
+                0x0800267c                DMA2_Stream1_IRQHandler
+                0x0800267c                FLASH_IRQHandler
+                0x0800267c                DMA2_Stream4_IRQHandler
+                0x0800267c                USART1_IRQHandler
+                0x0800267c                OTG_FS_IRQHandler
+                0x0800267c                SPI3_IRQHandler
+                0x0800267c                DMA1_Stream4_IRQHandler
+                0x0800267c                I2C1_ER_IRQHandler
+                0x0800267c                DMA2_Stream6_IRQHandler
+                0x0800267c                RTC_Alarm_IRQHandler
+ .text.memset   0x0800267e       0x10 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x0800267e                memset
+ *fill*         0x0800268e        0x2 
  .text.__libc_init_array
-                0x08002694       0x48 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
-                0x08002694                __libc_init_array
+                0x08002690       0x48 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x08002690                __libc_init_array
  .text.__udivmoddi4
-                0x080026dc      0x320 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x080026dc                __udivmoddi4
+                0x080026d8      0x320 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x080026d8                __udivmoddi4
  *(.glue_7)
- .glue_7        0x080029fc        0x0 linker stubs
+ .glue_7        0x080029f8        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080029fc        0x0 linker stubs
+ .glue_7t       0x080029f8        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x080029fc        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x080029f8        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080029fc        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x080029fc                _init
- .init          0x08002a00        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x080029f8        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x080029f8                _init
+ .init          0x080029fc        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08002a08        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x08002a08                _fini
- .fini          0x08002a0c        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08002a14                        . = ALIGN (0x4)
-                0x08002a14                        _etext = .
+ .fini          0x08002a04        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x08002a04                _fini
+ .fini          0x08002a08        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08002a10                        . = ALIGN (0x4)
+                0x08002a10                        _etext = .
 
-.vfp11_veneer   0x08002a14        0x0
- .vfp11_veneer  0x08002a14        0x0 linker stubs
+.vfp11_veneer   0x08002a10        0x0
+ .vfp11_veneer  0x08002a10        0x0 linker stubs
 
-.v4_bx          0x08002a14        0x0
- .v4_bx         0x08002a14        0x0 linker stubs
+.v4_bx          0x08002a10        0x0
+ .v4_bx         0x08002a10        0x0 linker stubs
 
-.iplt           0x08002a14        0x0
- .iplt          0x08002a14        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08002a10        0x0
+ .iplt          0x08002a10        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08002a14       0x18
-                0x08002a14                        . = ALIGN (0x4)
+.rodata         0x08002a10       0x18
+                0x08002a10                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08002a14       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
-                0x08002a14                AHBPrescTable
-                0x08002a24                APBPrescTable
+ .rodata        0x08002a10       0x18 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
+                0x08002a10                AHBPrescTable
+                0x08002a20                APBPrescTable
  *(.rodata*)
-                0x08002a2c                        . = ALIGN (0x4)
+                0x08002a28                        . = ALIGN (0x4)
 
-.ARM.extab      0x08002a2c        0x0
-                0x08002a2c                        . = ALIGN (0x4)
+.ARM.extab      0x08002a28        0x0
+                0x08002a28                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08002a2c                        . = ALIGN (0x4)
+                0x08002a28                        . = ALIGN (0x4)
 
-.ARM            0x08002a2c        0x8
-                0x08002a2c                        . = ALIGN (0x4)
-                0x08002a2c                        __exidx_start = .
+.ARM            0x08002a28        0x8
+                0x08002a28                        . = ALIGN (0x4)
+                0x08002a28                        __exidx_start = .
  *(.ARM.exidx*)
  .ARM.exidx.text.__udivmoddi4
-                0x08002a2c        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
-                0x08002a34                        __exidx_end = .
-                0x08002a34                        . = ALIGN (0x4)
+                0x08002a28        0x8 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+                0x08002a30                        __exidx_end = .
+                0x08002a30                        . = ALIGN (0x4)
 
-.preinit_array  0x08002a34        0x0
-                0x08002a34                        . = ALIGN (0x4)
-                0x08002a34                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08002a30        0x0
+                0x08002a30                        . = ALIGN (0x4)
+                0x08002a30                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08002a34                        PROVIDE (__preinit_array_end = .)
-                0x08002a34                        . = ALIGN (0x4)
+                0x08002a30                        PROVIDE (__preinit_array_end = .)
+                0x08002a30                        . = ALIGN (0x4)
 
-.init_array     0x08002a34        0x4
-                0x08002a34                        . = ALIGN (0x4)
-                0x08002a34                        PROVIDE (__init_array_start = .)
+.init_array     0x08002a30        0x4
+                0x08002a30                        . = ALIGN (0x4)
+                0x08002a30                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08002a34        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08002a38                        PROVIDE (__init_array_end = .)
-                0x08002a38                        . = ALIGN (0x4)
+ .init_array    0x08002a30        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08002a34                        PROVIDE (__init_array_end = .)
+                0x08002a34                        . = ALIGN (0x4)
 
-.fini_array     0x08002a38        0x4
-                0x08002a38                        . = ALIGN (0x4)
+.fini_array     0x08002a34        0x4
+                0x08002a34                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08002a38        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x08002a34        0x4 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08002a3c                        . = ALIGN (0x4)
-                0x08002a3c                        _sidata = LOADADDR (.data)
+                0x08002a38                        . = ALIGN (0x4)
+                0x08002a38                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x08002a3c        0x0
- .rel.iplt      0x08002a3c        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08002a38        0x0
+ .rel.iplt      0x08002a38        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000        0xc load address 0x08002a3c
+.data           0x20000000        0xc load address 0x08002a38
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -810,16 +810,16 @@ LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *fill*         0x20000009        0x3 
 
 .tm_clone_table
-                0x2000000c        0x0 load address 0x08002a48
+                0x2000000c        0x0 load address 0x08002a44
  .tm_clone_table
                 0x2000000c        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .tm_clone_table
                 0x2000000c        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.igot.plt       0x2000000c        0x0 load address 0x08002a48
+.igot.plt       0x2000000c        0x0 load address 0x08002a44
  .igot.plt      0x2000000c        0x0 /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.tdata          0x2000000c        0x0 load address 0x08002a48
+.tdata          0x2000000c        0x0 load address 0x08002a44
  *(.tdata .tdata.* .gnu.linkonce.td.*)
                 0x2000000c                        . = ALIGN (0x4)
                 0x2000000c                        _edata = .
@@ -836,7 +836,7 @@ LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 [!provide]                        PROVIDE (__data_source_end = __tdata_source_end)
                 [!provide]                        PROVIDE (__data_source_size = (__data_source_end - __data_source))
 
-.tbss           0x2000000c        0x0 load address 0x08002a48
+.tbss           0x2000000c        0x0 load address 0x08002a44
                 0x2000000c                        _sbss = .
                 0x2000000c                        __bss_start__ = _sbss
  *(.tbss .tbss.*)
@@ -853,7 +853,7 @@ LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 [!provide]                        PROVIDE (__arm32_tls_tcb_offset = MAX (0x8, __tls_align))
                 [!provide]                        PROVIDE (__arm64_tls_tcb_offset = MAX (0x10, __tls_align))
 
-.bss            0x2000000c      0x230 load address 0x08002a48
+.bss            0x2000000c      0x230 load address 0x08002a44
  *(.bss)
  .bss           0x2000000c        0x4 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
                 0x2000000c                uwTick
@@ -873,7 +873,7 @@ LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 [!provide]                        PROVIDE (__bss_size = (__bss_end - __bss_start))
 
 ._user_heap_stack
-                0x2000023c      0x604 load address 0x08002a48
+                0x2000023c      0x604 load address 0x08002a44
                 0x20000240                        . = ALIGN (0x8)
  *fill*         0x2000023c        0x4 
                 [!provide]                        PROVIDE (end = .)
@@ -952,7 +952,7 @@ LOAD linker stubs
  .comment       0x00000045        0x0 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
                                  0x46 (size before relaxing)
 
-.debug_info     0x00000000     0x3da3
+.debug_info     0x00000000     0x3dcd
  .debug_info    0x00000000      0x53a cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
  .debug_info    0x0000053a      0x900 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
  .debug_info    0x00000e3a      0x6f5 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
@@ -962,7 +962,7 @@ LOAD linker stubs
  .debug_info    0x000031f4      0x10e CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_it.c.obj
  .debug_info    0x00003302      0x2a0 CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_hal_msp.c.obj
  .debug_info    0x000035a2       0x30 CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
- .debug_info    0x000035d2      0x7d1 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
+ .debug_info    0x000035d2      0x7fb CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
 
 .debug_abbrev   0x00000000     0x10aa
  .debug_abbrev  0x00000000      0x118 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
@@ -998,7 +998,7 @@ LOAD linker stubs
  .debug_aranges
                 0x00000128       0x20 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
 
-.debug_line     0x00000000     0x2992
+.debug_line     0x00000000     0x29ad
  .debug_line    0x00000000      0x2c6 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj
  .debug_line    0x000002c6      0x916 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
  .debug_line    0x00000bdc      0x628 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
@@ -1008,7 +1008,7 @@ LOAD linker stubs
  .debug_line    0x000020ff      0x12e CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_it.c.obj
  .debug_line    0x0000222d      0x257 CMakeFiles/Firmware.dir/Core/Src/stm32f4xx_hal_msp.c.obj
  .debug_line    0x00002484       0x7a CMakeFiles/Firmware.dir/startup_stm32f411xe.s.obj
- .debug_line    0x000024fe      0x494 CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
+ .debug_line    0x000024fe      0x4af CMakeFiles/Firmware.dir/Core/Src/usart.c.obj
 
 .debug_str      0x00000000     0x1871
  .debug_str     0x00000000     0x1871 cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir/__/__/Core/Src/system_stm32f4xx.c.obj

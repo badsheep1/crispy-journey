@@ -80,7 +80,9 @@ USART_STATUS USART_Init(uint32_t baudrate) {
     }
   }
 
-  USART2->BRR |= USARTDIV;
+  //  USART2->BRR |= USARTDIV;
+  USART2->BRR = 0x16D; // Temporarily Hard Coding baudrate to 115200 to see if I
+                       // am setting baudrate incorrectly.
 
   /* Configuring USART Register */
   USART2->CR1 |= (1U << 2); // Receiver enabled
@@ -88,7 +90,6 @@ USART_STATUS USART_Init(uint32_t baudrate) {
 
   USART2->CR1 |= (1U << 5); // RX interrupt enabled
   USART2->CR1 |= (1U << 6); // TC interrupt enabled
-  USART2->CR1 |= (1U << 7); // TXE Interrupt enabled
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
