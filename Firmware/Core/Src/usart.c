@@ -122,13 +122,19 @@ USART_STATUS dequeue(Circle *buffer, uint8_t *byte) {
 }
 
 USART_STATUS USART_Transmit(uint8_t byte) {
+  __disable_irq(); // Disables all Interrupts to prevent TXIE from dequeuing
+                   // when enqueuing to TX_BUFFER
+  USART_STATUS returnStatus;
   if (enqueue(&TX_Buffer, byte)) {
     USART2->CR1 |=
         (1U << 7); // Enabling TXIE after enqueuing ensuring non-empty buffer
-    return USART_SUCCESS;
+    returnStatus = USART_SUCCESS;
+  } else {
+    returnStatus = USART_FAILURE;
   }
+  __enable_irq(); // Re-enables the IRQ after finishing this function call.
 
-  return USART_FAILURE;
+  return returnStatus;
 }
 
 USART_STATUS USART_Receive(uint8_t *byte) {
