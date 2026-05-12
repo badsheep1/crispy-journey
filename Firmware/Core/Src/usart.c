@@ -52,8 +52,10 @@ USART_STATUS USART_Init(uint32_t baudrate) {
     uint32_t PLLM = (RCC->PLLCFGR & 0x3F);
     uint32_t PLLP = (((RCC->PLLCFGR & (3U << 16)) >> 16) * 2) + 2;
 
+    // This prevents overflow, and preserves percision of fClk.
+    fClk /= PLLM;
     fClk *= PLLN;
-    fClk /= (PLLM * PLLP);
+    fClk /= PLLP;
   }
 
   uint32_t prescalar = 0;
@@ -80,9 +82,8 @@ USART_STATUS USART_Init(uint32_t baudrate) {
     }
   }
 
-  //  USART2->BRR |= USARTDIV;
-  USART2->BRR = 0x16D; // Temporarily Hard Coding baudrate to 115200 to see if I
-                       // am setting baudrate incorrectly.
+  // 0x16D Target BRR value
+  USART2->BRR |= USARTDIV;
 
   /* Configuring USART Register */
   USART2->CR1 |= (1U << 2); // Receiver enabled
