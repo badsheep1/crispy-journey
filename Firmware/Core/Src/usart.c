@@ -89,7 +89,6 @@ USART_STATUS USART_Init(uint32_t baudrate) {
   USART2->CR1 |= (1U << 3); // Transmitter enabled
 
   USART2->CR1 |= (1U << 5); // RX interrupt enabled
-  USART2->CR1 |= (1U << 6); // TC interrupt enabled
 
   USART2->CR1 |= (1U << 13); // USART enabled
 
